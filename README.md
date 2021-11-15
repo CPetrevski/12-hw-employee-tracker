@@ -86,3 +86,9 @@ Enjoy The App!
 ## Demo
 
 ![Demo for Employee Tracker](./assets/img/ep.gif)
+
+## Links
+
+### GITHUB
+
+https://github.com/CPetrevski/12-hw-employee-tracker
