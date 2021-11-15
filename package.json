@@ -1,0 +1,26 @@
+{
+  "name": "12-hw-employee-tracker",
+  "version": "1.0.0",
+  "description": "SQL Employee Tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CPetrevski/12-hw-employee-tracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CPetrevski/12-hw-employee-tracker/issues"
+  },
+  "homepage": "https://github.com/CPetrevski/12-hw-employee-tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.2.0",
+    "mysql2": "^2.3.3"
+  }
+}
