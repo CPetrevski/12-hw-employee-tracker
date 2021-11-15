@@ -2,13 +2,13 @@
 // const sequelize = require('./config/connection');
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
-const cTable = require('console.table');
+const conTable = require('console.table');
 
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
-    user: "root",
-    password: "Cpetrevski1",
+    user: "", // Insert User Name
+    password: "", // Insert Password
     database: "employees_db"
   });
 
@@ -64,14 +64,14 @@ function viewEmployee() {
     console.log("Viewing employees\n");
   
     var query =
-      `SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department, r.salary, CONCAT(m.first_name, ' ', m.last_name) AS manager
+    `SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department, r.salary, CONCAT(m.first_name, ' ', m.last_name) AS manager
     FROM employee e
     LEFT JOIN role r
-      ON e.role_id = r.id
+        ON e.role_id = r.id
     LEFT JOIN department d
-    ON d.id = r.department_id
+        ON d.id = r.department_id
     LEFT JOIN employee m
-      ON m.id = e.manager_id`
+        ON m.id = e.manager_id`
   
     connection.query(query, function (err, res) {
       if (err) throw err;
@@ -92,7 +92,7 @@ function viewEmployee() {
     LEFT JOIN role r
       ON e.role_id = r.id
     LEFT JOIN department d
-    ON d.id = r.department_id
+        ON d.id = r.department_id
     GROUP BY d.id, d.name`
   
     connection.query(query, function (err, res) {
@@ -126,9 +126,9 @@ inquirer
         `SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department 
         FROM employee e
         JOIN role r
-        ON e.role_id = r.id
+            ON e.role_id = r.id
         JOIN department d
-        ON d.id = r.department_id
+            ON d.id = r.department_id
         WHERE d.id = ?`
 
     connection.query(query, answer.departmentId, function (err, res) {
@@ -265,11 +265,11 @@ var query =
     `SELECT e.id, e.first_name, e.last_name, r.title, d.name AS department, r.salary, CONCAT(m.first_name, ' ', m.last_name) AS manager
         FROM employee e
         JOIN role r
-         ON e.role_id = r.id
+            ON e.role_id = r.id
         JOIN department d
-        ON d.id = r.department_id
+            ON d.id = r.department_id
         JOIN employee m
-        ON m.id = e.manager_id`
+            ON m.id = e.manager_id`
 
 connection.query(query, function (err, res) {
     if (err) throw err;
